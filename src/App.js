@@ -1,4 +1,4 @@
-import {  useState } from "react"
+import { useEffect, useState } from "react"
 import NotesList from "./components/NotesList"
 import { nanoid } from 'nanoid'
 import Search from "./components/Search"
@@ -26,7 +26,10 @@ import Header from "./components/Header"
   const [searchText, setSearchText] = useState('')
 
   const [darkMode, setDarkMode] = useState(false)
-
+ 
+  useEffect(() => {
+    localStorage.setItem('react-notes-app-data', JSON.stringify(notes))    
+  }, [notes])
   
   const addNote = (text) => {
     const date = new Date()
