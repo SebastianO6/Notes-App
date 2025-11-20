@@ -24,9 +24,7 @@ import Header from "./components/Header"
   ])  
 
   const [searchText, setSearchText] = useState('')
-
-  const [darkMode, setDarkMode] = useState(false)
- 
+  const [darkMode, setDarkMode] = useState(false) 
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem('react-notes-app-data'))
 
